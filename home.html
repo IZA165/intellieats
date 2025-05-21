@@ -18,7 +18,6 @@
       --font: "San Francisco", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
-    /* Global Styles */
     body {
       margin: 0;
       padding: env(safe-area-inset);
@@ -28,7 +27,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Header */
     header {
       display: flex;
       align-items: center;
@@ -45,16 +43,21 @@
       height: 32px;
     }
 
-    header span {
+    .location {
       font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* Section Styling */
+    .location::before {
+      content: "📍";
+    }
+
     .section {
       padding: 20px;
     }
 
-    /* Hero Section */
     .hero {
       text-align: center;
       padding: 40px 20px 20px;
@@ -71,7 +74,6 @@
       margin: 0;
     }
 
-    /* Product Item Styling */
     .product {
       display: flex;
       align-items: center;
@@ -99,7 +101,6 @@
       color: var(--subtext);
     }
 
-    /* Cart Button */
     .cart-btn {
       position: fixed;
       bottom: 80px;
@@ -118,7 +119,6 @@
       z-index: 200;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       font-size: 12px;
@@ -130,11 +130,6 @@
       body {
         background-color: #000;
         color: #fff;
-      }
-
-      header {
-        background-color: #1c1c1e;
-        border-bottom: 1px solid #2c2c2e;
       }
 
       .info p {
@@ -154,9 +149,10 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header with location -->
   <header>
     <img src="https://i.ibb.co/nMMVPHr3/logo.png" alt="intellieats logo" />
+    <span class="location">OL2 6AF</span>
   </header>
 
   <!-- Hero Section -->
@@ -165,10 +161,10 @@
     <p>Curated favourites, powered by AI.</p>
   </div>
 
-  <!-- Products -->
+  <!-- Product Section -->
   <div class="section">
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1566734043-c89b8c8ec4bb?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjYzNXwwfDF8c2VhY2h8Mnx8bWlsayUyQ2ltdGVtJTIwY29mZmVlfGVufDB8fHx8fDE2Nzk5NjUyNjc&ixlib=rb-1.2.1&q=80&w=400" alt="Milk" />
+      <img src="https://images.unsplash.com/photo-1566734043-c89b8c8ec4bb?crop=entropy&cs=tinysrgb&fit=max&ixlib=rb-1.2.1&q=80&w=400" alt="Milk" />
       <div class="info">
         <h3>Milk</h3>
         <p>Whole, semi-skimmed or oat.</p>
@@ -177,7 +173,7 @@
     </div>
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1581472321021-e9c0f440b85c?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg1NzF8MHx8c2VhY2h8NXx8YmlnJTIwbWlsa3xlbnwwfHx8fDE2NzkwNDEwOTM&ixlib=rb-1.2.1&q=80&w=400" alt="Fish Fingers" />
+      <img src="https://images.unsplash.com/photo-1581472321021-e9c0f440b85c?crop=entropy&cs=tinysrgb&fit=max&ixlib=rb-1.2.1&q=80&w=400" alt="Fish Fingers" />
       <div class="info">
         <h3>Fish Fingers</h3>
         <p>Classic British cod snack.</p>
@@ -186,7 +182,7 @@
     </div>
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1590001252551-cdb428ec74c1?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg1NzF8MHx8c2VhY2h8Mnx8aHVtbXVzfGVufDB8fHx8fDE2Nzk5NjUyNjc&ixlib=rb-1.2.1&q=80&w=400" alt="Hummus" />
+      <img src="https://images.unsplash.com/photo-1590001252551-cdb428ec74c1?crop=entropy&cs=tinysrgb&fit=max&ixlib=rb-1.2.1&q=80&w=400" alt="Hummus" />
       <div class="info">
         <h3>Hummus</h3>
         <p>Fresh, creamy chickpea dip.</p>
@@ -200,11 +196,10 @@
 
   <!-- Footer -->
   <footer>
-    © 2025 intellieats Ltd. | GaRY Computer Inc. All rights reserved.
+    © 2025 intellieats, a subsidiary of GaRY Computer Inc. All rights reserved.
   </footer>
 
   <script>
-    // PWA Install Prompt Logic
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('service-worker.js');
