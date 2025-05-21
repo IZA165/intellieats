@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#13823C" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="https://i.ibb.co/nMMVPHr3/logo.png" />
   <title>intellieats</title>
   <style>
     :root {
       --green: #13823C;
-      --bg: #f9f9f9;
-      --text: #000000;
-      --subtext: #666666;
-      --border: #e5e5ea;
+      --bg: #000000;
+      --text: #FFFFFF;
+      --subtext: #888888;
+      --border: #444444;
       --radius: 12px;
-      --font: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font: "San Francisco", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
+    /* Global Styles */
     body {
       margin: 0;
       padding: env(safe-area-inset);
@@ -27,16 +28,17 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Header */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: #ffffff;
-      border-bottom: 1px solid var(--border);
+      background-color: var(--green);
       padding: 14px 20px;
       position: sticky;
       top: 0;
       z-index: 100;
+      color: #ffffff;
     }
 
     header img {
@@ -45,23 +47,14 @@
 
     header span {
       font-size: 14px;
-      color: var(--subtext);
     }
 
+    /* Section Styling */
     .section {
       padding: 20px;
     }
 
-    input[type="text"] {
-      width: 100%;
-      padding: 14px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      font-size: 16px;
-      font-family: var(--font);
-      box-sizing: border-box;
-    }
-
+    /* Hero Section */
     .hero {
       text-align: center;
       padding: 40px 20px 20px;
@@ -78,6 +71,7 @@
       margin: 0;
     }
 
+    /* Product Item Styling */
     .product {
       display: flex;
       align-items: center;
@@ -105,13 +99,14 @@
       color: var(--subtext);
     }
 
+    /* Cart Button */
     .cart-btn {
       position: fixed;
-      bottom: 24px;
+      bottom: 80px;
       left: 50%;
       transform: translateX(-50%);
       background-color: var(--green);
-      color: white;
+      color: #ffffff;
       padding: 14px 24px;
       border: none;
       border-radius: 24px;
@@ -123,6 +118,7 @@
       z-index: 200;
     }
 
+    /* Footer */
     footer {
       text-align: center;
       font-size: 12px;
@@ -139,12 +135,6 @@
       header {
         background-color: #1c1c1e;
         border-bottom: 1px solid #2c2c2e;
-      }
-
-      input[type="text"] {
-        background-color: #2c2c2e;
-        border-color: #3a3a3c;
-        color: #fff;
       }
 
       .info p {
@@ -167,29 +157,18 @@
   <!-- Header -->
   <header>
     <img src="https://i.ibb.co/nMMVPHr3/logo.png" alt="intellieats logo" />
-    <span>📍 UK</span>
   </header>
 
-  <!-- Postcode -->
-  <div class="section">
-    <input type="text" placeholder="Enter your UK postcode (e.g. SW1A 1AA)" />
-  </div>
-
-  <!-- Search -->
-  <div class="section">
-    <input type="text" placeholder="Search for milk, fish fingers, or hummus..." />
-  </div>
-
-  <!-- Hero -->
+  <!-- Hero Section -->
   <div class="hero">
     <h2>Smart food, delivered fast.</h2>
-    <p>Curated UK favourites, powered by AI.</p>
+    <p>Curated favourites, powered by AI.</p>
   </div>
 
   <!-- Products -->
   <div class="section">
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1585238342028-3e08983f2f3b?auto=format&fit=crop&w=80&h=80&q=60" alt="Milk" />
+      <img src="https://images.unsplash.com/photo-1566734043-c89b8c8ec4bb?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjYzNXwwfDF8c2VhY2h8Mnx8bWlsayUyQ2ltdGVtJTIwY29mZmVlfGVufDB8fHx8fDE2Nzk5NjUyNjc&ixlib=rb-1.2.1&q=80&w=400" alt="Milk" />
       <div class="info">
         <h3>Milk</h3>
         <p>Whole, semi-skimmed or oat.</p>
@@ -198,7 +177,7 @@
     </div>
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1619102178795-b4cb19124b4e?auto=format&fit=crop&w=80&h=80&q=60" alt="Fish fingers" />
+      <img src="https://images.unsplash.com/photo-1581472321021-e9c0f440b85c?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg1NzF8MHx8c2VhY2h8NXx8YmlnJTIwbWlsa3xlbnwwfHx8fDE2NzkwNDEwOTM&ixlib=rb-1.2.1&q=80&w=400" alt="Fish Fingers" />
       <div class="info">
         <h3>Fish Fingers</h3>
         <p>Classic British cod snack.</p>
@@ -207,7 +186,7 @@
     </div>
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1603039405129-994f54878c63?auto=format&fit=crop&w=80&h=80&q=60" alt="Hummus" />
+      <img src="https://images.unsplash.com/photo-1590001252551-cdb428ec74c1?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg1NzF8MHx8c2VhY2h8Mnx8aHVtbXVzfGVufDB8fHx8fDE2Nzk5NjUyNjc&ixlib=rb-1.2.1&q=80&w=400" alt="Hummus" />
       <div class="info">
         <h3>Hummus</h3>
         <p>Fresh, creamy chickpea dip.</p>
@@ -221,7 +200,7 @@
 
   <!-- Footer -->
   <footer>
-    © 2025 intellieats, a subsidiary of GaRY Computer Inc.
+    © 2025 intellieats, a subsidiary of GaRY Computer Inc. All rights reserved.
   </footer>
 
   <script>
