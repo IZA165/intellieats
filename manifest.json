@@ -1,15 +1,21 @@
 {
   "name": "intellieats",
   "short_name": "intellieats",
-  "start_url": ".",
+  "start_url": "home.html",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#000000",
   "theme_color": "#13823C",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "https://i.ibb.co/nMMVPHr3/logo.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://i.ibb.co/nMMVPHr3/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ]
 }
