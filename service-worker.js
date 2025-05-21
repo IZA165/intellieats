@@ -1,15 +1,20 @@
-self.addEventListener('install', (e) => {
-  e.waitUntil(
-    caches.open('intellieats-v1').then((cache) => {
-      return cache.addAll(['./', './home.html', './manifest.json']);
-    })
+const CACHE_NAME = 'intellieats-cache-v1';
+const urlsToCache = [
+  'home.html',
+  'manifest.json',
+  'service-worker.js',
+  'https://i.ibb.co/nMMVPHr3/logo.png'
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
   );
 });
 
-self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request).then((response) => {
-      return response || fetch(e.request);
-    })
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => response || fetch(event.request))
   );
 });
