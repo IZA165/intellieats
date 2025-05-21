@@ -2,200 +2,235 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>intellieats - Home (UK)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="https://i.ibb.co/nMMVPHr3/logo.png" />
+  <title>intellieats</title>
   <style>
     :root {
-      --green: #06C167;
-      --dark: #121212;
-      --light-gray: #f5f5f5;
+      --green: #13823C;
+      --bg: #f9f9f9;
+      --text: #000000;
+      --subtext: #666666;
+      --border: #e5e5ea;
+      --radius: 12px;
+      --font: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: var(--dark);
+      padding: env(safe-area-inset);
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
     }
 
     header {
-      background-color: var(--green);
-      padding: 16px;
-      color: #fff;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     header img {
-      height: 40px;
+      height: 32px;
     }
 
-    .search-bar, .postcode-bar {
-      margin: 20px;
+    header span {
+      font-size: 14px;
+      color: var(--subtext);
+    }
+
+    .section {
+      padding: 20px;
     }
 
     input[type="text"] {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
       font-size: 16px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      font-family: var(--font);
+      box-sizing: border-box;
     }
 
     .hero {
-      background-color: var(--light-gray);
-      padding: 30px 20px;
       text-align: center;
+      padding: 40px 20px 20px;
     }
 
     .hero h2 {
-      margin-bottom: 10px;
       font-size: 24px;
+      margin-bottom: 6px;
     }
 
     .hero p {
-      color: #555;
+      color: var(--subtext);
       font-size: 16px;
+      margin: 0;
     }
 
-    .restaurants {
-      padding: 20px;
-    }
-
-    .restaurant-card {
-      border-bottom: 1px solid #ddd;
-      padding: 12px 0;
+    .product {
       display: flex;
-      gap: 12px;
       align-items: center;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .restaurant-card img {
-      width: 80px;
-      height: 80px;
+    .product img {
+      width: 70px;
+      height: 70px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: var(--radius);
     }
 
-    .restaurant-info {
-      flex-grow: 1;
-    }
-
-    .restaurant-info h3 {
+    .info h3 {
       margin: 0 0 4px;
-      font-size: 18px;
+      font-size: 17px;
+      font-weight: 600;
     }
 
-    .restaurant-info p {
+    .info p {
       margin: 2px 0;
       font-size: 14px;
-      color: #555;
+      color: var(--subtext);
     }
 
-    .checkout {
+    .cart-btn {
       position: fixed;
-      bottom: 20px;
+      bottom: 24px;
       left: 50%;
       transform: translateX(-50%);
       background-color: var(--green);
       color: white;
       padding: 14px 24px;
       border: none;
-      border-radius: 30px;
-      font-weight: bold;
+      border-radius: 24px;
       font-size: 16px;
+      font-weight: 600;
+      font-family: var(--font);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 200;
     }
 
     footer {
       text-align: center;
       font-size: 12px;
-      color: #999;
+      color: var(--subtext);
       padding: 80px 20px 20px;
     }
 
-    /* Mobile Responsive */
-    @media (max-width: 600px) {
-      .restaurant-card {
-        flex-direction: column;
-        align-items: flex-start;
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #000;
+        color: #fff;
       }
 
-      .restaurant-card img {
-        width: 100%;
-        height: auto;
+      header {
+        background-color: #1c1c1e;
+        border-bottom: 1px solid #2c2c2e;
       }
 
-      .checkout {
-        width: 90%;
-        font-size: 18px;
+      input[type="text"] {
+        background-color: #2c2c2e;
+        border-color: #3a3a3c;
+        color: #fff;
+      }
+
+      .info p {
+        color: #aaa;
+      }
+
+      .cart-btn {
+        background-color: #1c1c1e;
+        color: var(--green);
+      }
+
+      footer {
+        color: #888;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header with Logo -->
+  <!-- Header -->
   <header>
     <img src="https://i.ibb.co/nMMVPHr3/logo.png" alt="intellieats logo" />
     <span>📍 UK</span>
   </header>
 
-  <!-- Postcode Input -->
-  <div class="postcode-bar">
+  <!-- Postcode -->
+  <div class="section">
     <input type="text" placeholder="Enter your UK postcode (e.g. SW1A 1AA)" />
   </div>
 
-  <!-- Search Bar -->
-  <div class="search-bar">
+  <!-- Search -->
+  <div class="section">
     <input type="text" placeholder="Search for milk, fish fingers, or hummus..." />
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <div class="hero">
-    <h2>Simple. Local. Smart.</h2>
-    <p>Quick delivery of UK favourites, powered by AI.</p>
+    <h2>Smart food, delivered fast.</h2>
+    <p>Curated UK favourites, powered by AI.</p>
   </div>
 
-  <!-- Food Items -->
-  <div class="restaurants">
-    <div class="restaurant-card">
-      <img src="https://images.unsplash.com/photo-1585238342028-3e08983f2f3b?auto=format&fit=crop&w=80&h=80&q=60" alt="Milk">
-      <div class="restaurant-info">
+  <!-- Products -->
+  <div class="section">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1585238342028-3e08983f2f3b?auto=format&fit=crop&w=80&h=80&q=60" alt="Milk" />
+      <div class="info">
         <h3>Milk</h3>
-        <p>Whole, semi-skimmed or oat. Delivered chilled.</p>
+        <p>Whole, semi-skimmed or oat.</p>
         <p>£1.20 • 10–15 min</p>
       </div>
     </div>
 
-    <div class="restaurant-card">
-      <img src="https://images.unsplash.com/photo-1619102178795-b4cb19124b4e?auto=format&fit=crop&w=80&h=80&q=60" alt="Fish fingers">
-      <div class="restaurant-info">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1619102178795-b4cb19124b4e?auto=format&fit=crop&w=80&h=80&q=60" alt="Fish fingers" />
+      <div class="info">
         <h3>Fish Fingers</h3>
-        <p>Classic breaded cod. British favourite.</p>
+        <p>Classic British cod snack.</p>
         <p>£2.80 • 15–20 min</p>
       </div>
     </div>
 
-    <div class="restaurant-card">
-      <img src="https://images.unsplash.com/photo-1603039405129-994f54878c63?auto=format&fit=crop&w=80&h=80&q=60" alt="Hummus">
-      <div class="restaurant-info">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1603039405129-994f54878c63?auto=format&fit=crop&w=80&h=80&q=60" alt="Hummus" />
+      <div class="info">
         <h3>Hummus</h3>
-        <p>Fresh, creamy chickpea dip. Vegan friendly.</p>
+        <p>Fresh, creamy chickpea dip.</p>
         <p>£1.75 • 10–15 min</p>
       </div>
     </div>
   </div>
 
-  <!-- Checkout Button -->
-  <button class="checkout">🛒 View Basket</button>
+  <!-- Cart Button -->
+  <button class="cart-btn">🛒 View Basket</button>
 
   <!-- Footer -->
   <footer>
-    © 2025 intellieats. Delivering smarter food in the UK.
+    © 2025 intellieats, a subsidiary of GaRY Computer Inc.
   </footer>
 
+  <script>
+    // PWA Install Prompt Logic
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
 </body>
 </html>
